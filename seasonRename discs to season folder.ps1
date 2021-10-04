@@ -20,6 +20,7 @@ if (!(test-path $seasonPath)){
     $folderConfirmation = read-host -Prompt "($seasonPath) does not exist. Create it? (y/n)"
     if ($folderConfirmation -eq 'y'){
         new-item -ItemType directory -path $seasonPath #-WhatIf
+        "Directory $seasonPath does not exist and was created`n"| Out-File -FilePath logFile -Append
     }
     elseif ($folderConfirmation -ne 'y') {
         exit
