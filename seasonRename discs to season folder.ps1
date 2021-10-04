@@ -11,7 +11,7 @@ $seasonPath = "$basePath\$showName\season $seasonNumber\"
 $logFile = "${basepath}\logs\$(get-date -Format "yyyy-MM-dd_HH.mm")_seasonmove.log"
 if (!(Test-Path $logFile)){
     if (!(Test-Path "${basepath}\logs\")){
-        New-Item -ItemType Directory -Path "${basepath}logs"
+        New-Item -ItemType Directory -Path "${basepath}\logs"
     }
     new-item -ItemType File -Path $logFile
 }
